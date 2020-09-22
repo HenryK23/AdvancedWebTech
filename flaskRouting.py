@@ -13,6 +13,12 @@ def hello():
 def goodbye():
     return "Goodbye cruel world :^("
 
+@app.route("/Jeff/")
+def jeff():
+    return "My name is jeff"
+
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = true)
 

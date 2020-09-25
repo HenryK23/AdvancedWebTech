@@ -1,7 +1,7 @@
 from flask import Flask , request
 app = Flask (__name__)
 
-@app.route("/account/", methods =[ ’POST’,’GET’])
+@app.route("/account/", methods=['POST','GET'])
 def account():
   if request.method == ’POST’:
   print request.form

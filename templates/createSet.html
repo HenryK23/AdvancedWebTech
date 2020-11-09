@@ -2,15 +2,20 @@
 {% block content %}
 
 
-<style> 
-form{
-	padding-top: 100px;
-}
-</style>
-
-
-
 <form>
+  <div class="form-group" style="padding-top:50px;
+	  width: 40rem;">
+    <label for="exampleInputEmail1">Set Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter set name">
+    <small id="emailHelp" class="form-text text-muted">Please enter the name for the set</small>
+  </div>
+  <a class="btn btn-success" href="http://webtech-21.napier.ac.uk:5000/flashycards/home/openset/" role="button"> Create set </a>
+</form>
+
+<div class="container" style="
+	border: 1px solid light grey">
+	<h1 style="text-align:center"> Enter your questions and answers </h1>
+<form style="padding-top:50px">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="question1">Question</label>
@@ -31,8 +36,8 @@ form{
       <input type="text" class="form-control" id="answer2">
     </div>
   </div>
-  <a class="btn btn-success" href="http://webtech-21.napier.ac.uk:5000/flashycards/home/openset/" role="button">Create Set</a>
 </form>
+</div>
 
 {% endblock %}
 

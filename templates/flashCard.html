@@ -1,15 +1,27 @@
 {% extends 'MasterPage.html' %}
 {% block content %}
 
-<div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body text-dark">
-    <h5 class="card-title">Dark card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+
+<div class="container" style="padding-top: 150px;">
+	<div class="card text-center">
+		<div class="card-header">
+			Question
+		</div>
+		<div class="card-body">
+			<p class="card-text">What is the powerhouse of the cell</p>
+		</div>
+		<div>
+			<div class="container" style="padding-left: 275px;">
+				<form>
+					<div class="form-group" style="width: 35rem; " >
+						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="answerhelp" placeholder="Enter answer">
+						<small id="answerhelp" class="form-text text-muted">enter the answer to the quesion here</small>
+						<a href="#" class="btn btn-success">Answer</a>
+					</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-
 
 
 {% endblock %}

@@ -1,0 +1,38 @@
+{%  extends  "MasterPage.html" %}
+{% block content %}
+
+
+<style> 
+form{
+	padding-top: 100px;
+}
+</style>
+
+
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="question1">Question</label>
+      <input type="text" class="form-control" id="question1">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="answer1">Answer</label>
+      <input type="text" class="form-control" id="answer1">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="question2">Question</label>
+      <input type="text" class="form-control" id="question2">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="answer2">Answer</label>
+      <input type="text" class="form-control" id="answer2">
+    </div>
+  </div>
+  <a class="btn btn-success" href="http://webtech-21.napier.ac.uk:5000/flashycards/home/openset/" role="button">Create Set</a>
+</form>
+
+{% endblock %}
+

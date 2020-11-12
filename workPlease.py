@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 app = Flask(__name__)
 
 
@@ -34,13 +34,25 @@ def createset():
 def openset(text):
     return render_template('openSet.html', text=text)
 
-@app.route('/flashycards/home/openset/flashcard/')
-def flashcard():
-    return render_template('flashCard.html')
+@app.route('/flashycards/home/openset/flashcard/<questionlist><answerlist>')
+def flashcard(questionlist, answerlist):
+    return render_template('flashCard.html', questionlist=questionlist, answerlist=answerlist)
+    #return jsonify(questionlist, answerlist)
 
-@app.route('/flashycards/home/createset/questions/<int:intQuestionCount><setName>')
+@app.route('/flashycards/home/createset/questions/<int:intQuestionCount><setName>', methods=['GET', 'POST'])
 def questions(intQuestionCount,setName):
-    return render_template('createQuestion.html', questionCount=intQuestionCount,Name=setName)
+    if request.method == 'POST':
+        #questionlist=[]
+        questionlist = request.form.getlist('question[]')
+        answerlist = request.form.getlist('answer[]')
+        #for question in questionlist:
+         #   print(question)
+        return redirect(url_for("flashcard", questionlist=questionlist, answerlist=answerlist))
+        
+        #return jsonify(questionlist, answerlist)
+
+    else:
+        return render_template('createQuestion.html', questionCount=intQuestionCount,Name=setName)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

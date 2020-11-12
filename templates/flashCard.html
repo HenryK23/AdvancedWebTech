@@ -2,26 +2,29 @@
 {% block content %}
 
 
+
+{% set question = questionlist.split("'") %}
 <div class="container" style="padding-top: 150px;">
-	<div class="card text-center">
-		<div class="card-header">
-			Question
-		</div>
-		<div class="card-body">
-			<p class="card-text">What is the powerhouse of the cell</p>
-		</div>
-		<div>
-			<div class="container" style="padding-left: 275px;">
-				<form>
-					<div class="form-group" style="width: 35rem; " >
-						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="answerhelp" placeholder="Enter answer">
-						<small id="answerhelp" class="form-text text-muted">enter the answer to the quesion here</small>
-						<a href="#" class="btn btn-success">Answer</a>
-					</div>
-			</div>
-		</div>
-	</div>
+        <div class="card text-center">
+                <div class="card-header">
+                        Question
+                </div>
+                <div class="card-body">
+			<p class="card-text">{{ question[1] }}</p>
+                </div>
+                <div>
+                        <div class="container" style="padding-left: 275px;">
+                                <form>
+                                        <div class="form-group" style="width: 35rem; " >
+                                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="answerhelp" placeholder="Enter answer">
+                                                <small id="answerhelp" class="form-text text-muted">enter the answer to the quesion here</small>
+                                                <a href="#" class="btn btn-success">Answer</a>
+                                        </div>
+                        </div>
+                </div>
+        </div>
 </div>
+
 
 
 {% endblock %}

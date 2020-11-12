@@ -2,24 +2,29 @@
 {% block content %}
 
 
-<form>
+
+<form method="POST">
   <div class="form-group" style="padding-top:50px;
 	  width: 40rem;">
     <label for="exampleInputEmail1">Set Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter set name">
+    <input type="text" name ="setName" class="form-control" id="setName" aria-describedby="emailHelp" placeholder="Enter set name">
     <small id="emailHelp" class="form-text text-muted">Please enter the name for the set</small>
+     <label for="exampleInputEmail1">Number of questions</label>
+    <input type="text" name="questionCount" class="form-control" id="questionCount" aria-describedby="questionCount" placeholder="enter how many questions you want">
   </div>
+  <input type="submit" value="submit"
   <a class="btn btn-success" href="http://webtech-21.napier.ac.uk:5000/flashycards/home/openset/" role="button"> Create set </a>
 </form>
 
 <div class="container" style="
 	border: 1px solid light grey">
 	<h1 style="text-align:center"> Enter your questions and answers </h1>
-<form style="padding-top:50px">
+	<form method="POST"
+	style="padding-top:50px">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="question1">Question</label>
-      <input type="text" class="form-control" id="question1">
+      <label for="question">Question</label>
+      <input type="text" name="question" class="form-control">
     </div>
     <div class="form-group col-md-6">
       <label for="answer1">Answer</label>
@@ -28,8 +33,8 @@
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="question2">Question</label>
-      <input type="text" class="form-control" id="question2">
+      <label for="question1">Question</label>
+      <input type="text" name="question1" class="form-control">
     </div>
     <div class="form-group col-md-6">
       <label for="answer2">Answer</label>

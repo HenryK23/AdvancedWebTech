@@ -1,0 +1,15 @@
+{% extends 'MasterPage.html' %}
+{% block content %}
+
+
+
+<form>
+	{% for i in range(questionCount) %}
+    <div class="form-group">
+        <label for="exampleInputEmail1">Question</label>
+        <input type="text" class="form-control" name="question">
+    </div>
+{% endfor %}
+
+</form>
+{% endblock %}

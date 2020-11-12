@@ -7,6 +7,9 @@
   <button type="button" class="list-group-item list-group-item-action">Biology Set</button>
   <button type="button" class="list-group-item list-group-item-action">Norwegian Set</button>
   <button type="button" class="list-group-item list-group-item-action">Computing Set</button>
+  {% for txt in text %}
+	<button type="button" class="list-group-item list-group-item-action">{{ txt }}</button>
+  {% endfor %}
 </div>
 
 <div class="button" style="padding-top:50px;">

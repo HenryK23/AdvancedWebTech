@@ -23,10 +23,10 @@ def createset():
     if request.method == 'POST':
         setName = request.form['setName']
         print(setName)
-        strQuestionCount="5"
+        strQuestionCount="1"
         strQuestionCount = request.form['questionCount']
         intQuestionCount = int(strQuestionCount)
-        return redirect(url_for("questions", intQuestionCount=intQuestionCount))
+        return redirect(url_for("questions", intQuestionCount=intQuestionCount,setName=setName))
     else: 
         return render_template('createSet.html')
 
@@ -38,9 +38,9 @@ def openset(text):
 def flashcard():
     return render_template('flashCard.html')
 
-@app.route('/flashycards/home/createset/questions/<intQuestionCount>')
-def questions(intQuestionCount):
-    return render_template('createQuestion.html', questionCount=intQuestionCount)
+@app.route('/flashycards/home/createset/questions/<int:intQuestionCount><setName>')
+def questions(intQuestionCount,setName):
+    return render_template('createQuestion.html', questionCount=intQuestionCount,Name=setName)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

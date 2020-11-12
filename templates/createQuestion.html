@@ -3,13 +3,23 @@
 
 
 
-<form>
+<form method="POST"
+	style="padding-top: 150px">
+	<h1 style="text-align: center"> Questions and answers for {{ Name }} set</h1>
 	{% for i in range(questionCount) %}
-    <div class="form-group">
-        <label for="exampleInputEmail1">Question</label>
+<div class ="form-row">
+    <div class="form-group col-md-6">
+        <label for="question">Question</label>
         <input type="text" class="form-control" name="question">
     </div>
+    <div class ="form-group col-md-6">
+	<label for="answer">Answer</label>
+	<input type="text" class="form-control" name="answer">
+    </div>
+    </div>
 {% endfor %}
+
+<input type="submit" value="submit" class="btn btn-success">
 
 </form>
 {% endblock %}

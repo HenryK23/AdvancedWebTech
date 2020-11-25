@@ -34,8 +34,9 @@ def createset():
 def openset(text):
     return render_template('openSet.html', text=text)
 
-@app.route('/flashycards/home/openset/flashcard/<questionlist><answerlist>')
+@app.route('/flashycards/home/openset/flashcard/<questionlist><answerlist>', methods=['GET', 'POST'])
 def flashcard(questionlist, answerlist):
+    questionlist = list(questionlist.split(","))
     return render_template('flashCard.html', questionlist=questionlist, answerlist=answerlist)
     #return jsonify(questionlist, answerlist)
 

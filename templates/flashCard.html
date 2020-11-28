@@ -2,14 +2,28 @@
 {% block content %}
 
 
-
+<form method="POST"
 {% for question in questionlist %}
 
 
-<h1> question </h1>
-<h1> {{ question }} </h1>
+  <div class="card text-center" style="padding-top:100px">
+    <div class="card-header" id="title">
+      Question
+    </div>
+    <div class="card-body">
+      <p class="card-text" id= "formQuestions">{{ question }}</p>
+    </div>
+    <div>
+      <label for="cardAnswer">Answer</label>
+      <input type="text" class="form-control" name="cardAnswer">
+    </div>
+  </div>
 
 {% endfor %}
-
+<div>
+  <button id="submit" class="btn btn-success"> Check Answers </button>
+</div>
+</form>
 
 {% endblock %}
+

@@ -2,25 +2,19 @@
 
 {% block content %}
 
-<div class="list-group" style="width:20rem;
-	padding-top:150px;">
-  <button type="button" class="list-group-item list-group-item-action">Biology Set</button>
-  <button type="button" class="list-group-item list-group-item-action">Norwegian Set</button>
-  <button type="button" class="list-group-item list-group-item-action">Computing Set</button>
-  {% for txt in text %}
-	<button type="button" class="list-group-item list-group-item-action">{{ txt }}</button>
-  {% endfor %}
-</div>
+<form method ="POST">
+	<div class = container style = "padding-left:150px; padding-right:150px; padding-top:100px;">
+		<select class="form-control form-control-lg" name="option">
+			{% for option in optionList %}
+		  <option>{{ option }}</option>
+			{% endfor %}
+		</select>
+		<div style="padding-top:25px">
+			<input type="submit" value="open Set" class="btn btn-success" >
+		</div>
+	</div>
 
-<div class="button" style="padding-top:50px;">
-	<a class="btn btn-success" href="http://webtech-21.napier.ac.uk:5000/flashycards/home/openset/flashcard/" role="button">Open Set</a>
-</div>
-
-
-
-
-
-
-
+</form>
 
 {% endblock %}
+

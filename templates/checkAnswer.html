@@ -1,8 +1,34 @@
 {% extends 'MasterPage.html' %}
 {% block content %}
 
+<form method="POST">
+  <div class="container" style="padding-top:100px">
+    <div class="jumbotron" style="padding-top:100px">
+      <h1 class="display-4">You achieved a {{ letterGrade }}</h1>
+      <p class="lead">{{ gradeMessage }}</p>
+      <hr class="my-4">
+      <p>you got {{ gradePercentage }} % </p>
+
+      <input type="submit" value="retry" class="btn btn-success">
+
+      <a class="btn btn-success"  href="/flashycards/home/openset/flashcard/checkanswer/save/" role="button">save</a>
+
+    </div>
+  </div>
+</form>
 <div>
-  <h1> you got {{ gradePercentage }} % correct.  </h1>
 </div>
 {% endblock %}
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
 
